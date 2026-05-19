@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>軟體訂閱紀錄</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Microsoft JhengHei", "微軟正黑體", sans-serif;
+    font-size: 13px;
+    background: #f0f0f0;
+    padding: 24px;
+    color: #222;
+  }
+  h1 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 32px;
+  }
+  .update-date {
+    text-align: center;
+  }
+  .update-date .label {
+    font-size: 13px;
+    color: #444;
+    margin-bottom: 4px;
+  }
+  .update-date .value {
+    font-size: 28px;
+    font-weight: bold;
+    color: #222;
+  }
+  .software-name-block {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .software-name-block .label {
+    font-size: 13px;
+    color: #444;
+  }
+  .software-name-block select {
+    border: 1px solid #bbb;
+    padding: 4px 24px 4px 8px;
+    font-size: 13px;
+    font-family: inherit;
+    background: #fff;
+    border-radius: 2px;
+    cursor: pointer;
+    appearance: auto;
+  }
+
+  .record-block {
+    background: #fff;
+    border: 1px solid #ddd;
+    margin-bottom: 36px;
+    padding: 20px;
+  }
+  .record-block h2 {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 14px;
+    color: #1a1a1a;
+    border-left: 4px solid #4da6e8;
+    padding-left: 8px;
+  }
+  .tables-row {
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  table {
+    border-collapse: collapse;
+    min-width: 240px;
+  }
+  th {
+    background-color: #4da6e8;
+    color: #fff;
+    font-weight: bold;
+    padding: 6px 12px;
+    text-align: left;
+    border: 1px solid #3a90d0;
+    white-space: nowrap;
+  }
+  td {
+    padding: 5px 12px;
+    border: 1px solid #ddd;
+    background: #fff;
+    vertical-align: top;
+  }
+  tr:nth-child(even) td {
+    background: #f7f9fb;
+  }
+
+  .note {
+    font-size: 11px;
+    color: #888;
+    margin-top: 6px;
+  }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <div class="software-name-block">
+    <div class="label">軟體名稱</div>
+    <select id="softwareSelect" onchange="filterRecords(this.value)">
+      <option value="all">軟體訂閱總覽</option>
+      <option value="adobe">Adobe</option>
+      <option value="magnific">Magnific（原名 Freepik）</option>
+      <option value="dreamina">即夢（Dreamina）</option>
+      <option value="google">Google 雲端硬碟</option>
+    </select>
+  </div>
+  <div class="update-date">
+    <div class="label">資料更新日</div>
+    <div class="value">5/19/2026</div>
+  </div>
+</div>
+
+<!-- Adobe -->
+<div class="record-block" data-id="adobe">
+  <h2>Adobe</h2>
+  <div class="tables-row">
+    <table>
+      <tr><th>項目</th><th>內容</th></tr>
+      <tr><td>用途</td><td>Photoshop、Illustrator、Firefly..等</td></tr>
+      <tr><td>聯繫窗口</td><td>許媚喬</td></tr>
+      <tr><td>費用申請</td><td>（待與媚喬確認）</td></tr>
+      <tr><td>帳號數</td><td>3</td></tr>
+      <tr><td>月(年)費(含)</td><td>—</td></tr>
+      <tr><td>幣別</td><td>新台幣</td></tr>
+      <tr><td>手續費</td><td>刷卡手續費</td></tr>
+      <tr><td>繳款期</td><td>年費年繳</td></tr>
+      <tr><td>付款方式</td><td>信用卡</td></tr>
+    </table>
+    <table>
+      <tr><th>帳號</th><th>使用者</th><th>說明</th></tr>
+      <tr><td>mei@ls3c.com.tw</td><td>媚喬</td><td>設計</td></tr>
+      <tr><td>jenny621101@ls3c.com.tw</td><td>品涵</td><td>設計</td></tr>
+      <tr><td>shuyuchen@ls3c.com.tw</td><td>姝伃</td><td>設計</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- Magnific -->
+<div class="record-block" data-id="magnific">
+  <h2>Magnific（原名 Freepik）</h2>
+  <div class="tables-row">
+    <table>
+      <tr><th>項目</th><th>內容</th></tr>
+      <tr><td>用途</td><td>設計素材下載、AI影片製作</td></tr>
+      <tr><td>聯繫窗口</td><td>許媚喬</td></tr>
+      <tr><td>費用申請</td><td>144</td></tr>
+      <tr><td>帳號數</td><td>2</td></tr>
+      <tr><td>月(年)費(含)</td><td>144</td></tr>
+      <tr><td>幣別</td><td>歐元</td></tr>
+      <tr><td>手續費</td><td>刷卡手續費</td></tr>
+      <tr><td>繳款期</td><td>年費年繳</td></tr>
+      <tr><td>付款方式</td><td>信用卡</td></tr>
+    </table>
+    <table>
+      <tr><th>帳號</th><th>使用者</th><th>說明</th></tr>
+      <tr><td>lsdv.designer@gmail.com</td><td>—</td><td>設計</td></tr>
+      <tr><td>lsdv.designer2@gmail.com</td><td>—</td><td>設計</td></tr>
+    </table>
+  </div>
+  <div class="note">網址：https://www.magnific.com/</div>
+</div>
+
+<!-- 即夢 Dreamina -->
+<div class="record-block" data-id="dreamina">
+  <h2>即夢（Dreamina）</h2>
+  <div class="tables-row">
+    <table>
+      <tr><th>項目</th><th>內容</th></tr>
+      <tr><td>用途</td><td>AI短影片製作</td></tr>
+      <tr><td>聯繫窗口</td><td>梁品涵</td></tr>
+      <tr><td>費用申請</td><td>1,349</td></tr>
+      <tr><td>帳號數</td><td>1</td></tr>
+      <tr><td>月(年)費(含)</td><td>1,349</td></tr>
+      <tr><td>幣別</td><td>新台幣</td></tr>
+      <tr><td>手續費</td><td>刷卡手續費</td></tr>
+      <tr><td>繳款期</td><td>單次購買（儲值1次）</td></tr>
+      <tr><td>付款方式</td><td>信用卡</td></tr>
+    </table>
+    <table>
+      <tr><th>帳號</th><th>使用者</th><th>說明</th></tr>
+      <tr><td>lsdv.designer2@gmail.com</td><td>—</td><td>設計</td></tr>
+      <tr><td>lsdv.designer@gmail.com</td><td>—</td><td>設計</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- Google 雲端硬碟 -->
+<div class="record-block" data-id="google">
+  <h2>Google 雲端硬碟（擴充至 100GB）</h2>
+  <div class="tables-row">
+    <table>
+      <tr><th>項目</th><th>內容</th></tr>
+      <tr><td>用途</td><td>上傳要提供給廠商的發包圖檔、清單</td></tr>
+      <tr><td>聯繫窗口</td><td>陳姝伃</td></tr>
+      <tr><td>費用申請</td><td>650</td></tr>
+      <tr><td>帳號數</td><td>1</td></tr>
+      <tr><td>月(年)費(含)</td><td>650</td></tr>
+      <tr><td>幣別</td><td>新台幣</td></tr>
+      <tr><td>手續費</td><td>刷卡手續費</td></tr>
+      <tr><td>繳款期</td><td>年費年繳</td></tr>
+      <tr><td>付款方式</td><td>信用卡</td></tr>
+    </table>
+    <table>
+      <tr><th>帳號</th><th>使用者</th><th>說明</th></tr>
+      <tr><td>lsdv.designer2@gmail.com</td><td>—</td><td>設計</td></tr>
+    </table>
+  </div>
+</div>
+
+<script>
+  function filterRecords(value) {
+    const blocks = document.querySelectorAll('.record-block');
+    blocks.forEach(block => {
+      if (value === 'all' || block.dataset.id === value) {
+        block.style.display = '';
+      } else {
+        block.style.display = 'none';
+      }
+    });
+  }
+</script>
+</body>
+</html>
